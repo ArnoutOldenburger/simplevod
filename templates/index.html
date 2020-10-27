@@ -1,0 +1,23 @@
+{% load static from staticfiles %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>simplevod</title>
+        <link rel="stylesheet" href="{% static "stylesheets/index.css" %}">
+        <script src="{% static "scripts/index.js" %}"></script>
+    </head>
+    <body>
+        <ul>
+        {% spaceless %}
+		{% if config_count > 0 %}
+		    {% for feed in configuration %}
+			    <li><a href="{% url 'browse' feed.name %}">{{ feed.name }}</li> 
+		    {% endfor %}
+		{% else %}
+            <center><p> Simplevod database is empty.</p></center>
+		{% endif %}
+		{% endspaceless %}
+        </ul>
+    </body>
+</html>
+

@@ -1,0 +1,93 @@
+$(document).ready(function(){
+
+  alert('document ready');
+   
+  $( window ).resize(function() {
+    updateScale();
+  });
+  updateScale();
+
+  var buttons = document.getElementsByTagName("A");
+  var topButton = 0;
+  var selectedButton = 0;
+
+  if(window.location.hash) {
+    var hash = window.location.hash.substring(1);
+    for(var i = 0; i < buttons.length; i++) {
+      if(buttons[i].name == hash) {
+        selectedButton = i;
+        break;
+      }
+    }
+  }
+
+  selectButton(0);
+
+    $(document).keydown(function(e){
+      if (e.keyCode == 37) {
+          var links = document.getElementsByTagName("LINK");
+          for(var i = 0; i < links.length; i++) {
+            var link = links[i];
+            if(link.rel == "up") {
+              window.location = link.href;
+              ev.precentDefault();
+              break;
+            }
+      } else if (e.keyCode == 13) {
+          if(buttons[selectedButton] && buttons[selectedButton].href) {
+            window.location = buttons[selectedButton].href;
+          }
+          ev.preventDefault();
+      } else if (e.keyCode == 38) {
+          selectButton(-1);
+          ev.preventDefault();
+      } else if (e.keyCode == 40) {
+          selectButton(1);
+          ev.preventDefault();
+      }
+    });
+}    
+
+function selectButton(index) {
+    		
+  alert('selectButton');  		
+
+    if(buttons[selectedButton + index]) {
+        selectedButton += index;
+        if(selectedButton < topButton) {
+            topButton = selectedButton;
+        } else if(selectedButton >= topButton + 4) {
+            topButton = selectedButton - 3;
+        }
+        for(var i = 0; i < buttons.length; i++) {
+            if(i < topButton || i >= topButton + 4) {
+                buttons[i].style.display = "none";
+            } else {
+                buttons[i].style.display = null;
+            }
+        }
+        buttons[selectedButton].focus();
+    }
+
+    var nof_buttons = buttons.length;
+    var selected_button = selectedButton + 1;
+    var strcounter = selected_button + "/" + nof_buttons
+    appendHtml('counter', strcounter);
+}
+
+
+function appendHtml(targetC, htmldata) {
+    var theDiv = document.getElementById(targetC);
+    theDiv.innerHTML = htmldata; 
+}
+
+function updateScale() {
+    body = document.getElementsByTagName("BODY")[0];
+    var xScale = window.innerWidth / 720;
+    var yScale = window.innerHeight / 576;
+    body.style.webkitTransformOrigin = "0 0";
+    body.style.webkitTransform = "scale(" + xScale + ", " + yScale + ")";
+}
+
+
+

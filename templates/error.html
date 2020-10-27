@@ -1,0 +1,16 @@
+{% load static from staticfiles %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>{{ title }}</title>
+        <link rel="stylesheet" href="{% static "stylesheets/play.css" %}">
+        <link rel="up" href={{ linkUp }}>
+        <link rel="zt6-tvod-description" href="{% url 'browse' style feed_id %}">
+        <script src="{% static "scripts/play.js" %}"></script>
+    </head>
+	
+    <body>
+        <p>{{ message }}...</p>
+    </body>
+</html>
+

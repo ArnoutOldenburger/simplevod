@@ -1,0 +1,143 @@
+body {
+  font-family: "Times";
+  font-size: 32px;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 1280px;
+  height: 720px;
+}
+
+div#header {
+  width: 720px;
+  height: 120px;
+  background: no-repeat left bottom;
+  background-image: url(../images/header.png);
+}
+
+div#header h1 {
+  position: absolute;
+  text-align: right;
+  margin-top: 75px;
+  width: 460px;
+  color: white;
+  font-family: sans-serif;
+  font-weight: 600;
+  font-size: 36px;
+  font-style: italic;
+  -webkit-text-stroke: 2px #444;
+}
+
+.telfortvideotheek div#content {
+  margin-top: 23px;
+  margin-left: 185px;
+}
+
+
+div#footer {
+  margin-top: -8px;
+  width: 720px;
+  height: 48px;
+  background: no-repeat left top;
+  background-image: url(../images/footer.png);
+}
+
+div#counter {
+  display: none; 
+}
+
+body.telfortvideotheek {
+    background-image: url(../images/videoland_frame.jpg);
+    background-size: 1280px 720px;
+    background-repeat: no-repeat;
+    background-color: #cccccc;
+}
+
+.telfortvideotheek h1 {
+  visibility: hidden;
+}
+/* CSS Telfort */
+
+
+.telfortvideotheek div#footer {
+  visibility: hidden;
+  background-image: none; 
+}
+
+
+.telfortvideotheek a {
+  font-size: 20px;
+  font-weight: bold;
+  display: table-cell;
+  color: gray; 
+  text-decoration: none;
+}
+
+.telfortvideotheek div#header {
+  background-image: url(../images/header_videoland.png); 
+  background-size: 490px 101px;
+  position: absolute;
+  left: 380px;
+  top: 30px; */
+  bottom: 50px;
+}
+
+.telfortvideotheek .content img {
+  padding: 25px;
+  vertical-align: middle;
+  display: inline;
+  margin: 0 10px;
+  padding-left: 10px;
+  max-width: 50px;
+}
+
+.telfortvideotheek {
+  padding-top: 23px;
+  background-image: none;
+  background-repeat: repeat;
+}
+
+.telfortvideotheek a {
+  background: none;
+  text-decoration: none;
+  text-align: center;
+  color: gray;
+}
+
+.telfortvideotheek a:focus {
+  background-color: gray;
+  outline: none;
+  color: blue;
+}
+
+.telfortvideotheek .movie {
+  display: table-cell;
+  padding-right: 50px;
+  padding-top: 20px;
+}
+
+.telfortvideotheek .title {
+  font-family: Ubuntu, sans-serif;
+  color: #FFF;
+  width: 100%;
+  margin-top: 15px;
+  margin-bottom: 20px;
+  text-align: center;
+  font-size: 24px;
+}
+
+.telfortvideotheek div#content{
+  position: absolute;
+  top: 165px;
+  left: 30px;
+  overflow: hidden;
+  width: 1500px;
+  height: 700px;
+  margin-top: 23px;
+
+}
+
+

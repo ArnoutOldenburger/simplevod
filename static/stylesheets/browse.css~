@@ -1,0 +1,876 @@
+body {
+  font-family: "Times";
+  font-size: 32px;
+  line-height: 30px;
+  margin: 0;
+  padding: 0;
+  color: #00a8ff;
+  width: 720px;
+  height: 120px;
+}
+
+div#header {
+  width: 720px;
+  height: 120px;
+  background: no-repeat left bottom;
+  background-image: url(../images/header.png);
+}
+
+div#header h1 {
+  position: absolute;
+  text-align: right;
+  margin-top: 75px;
+  width: 460px;
+  color: white;
+  font-family: sans-serif;
+  font-weight: 600;
+  font-size: 36px;
+  font-style: italic;
+  -webkit-text-stroke: 2px #444;
+}
+
+div#content {
+  width: 720px;
+  height: 392px;
+  margin-top: 23px;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  display: table;
+}
+
+li {
+  list-style-type: none;
+  display: table-row;
+}
+
+a {
+  display: table-cell;
+  width: 720px;
+  height: 76px;
+  padding-left: 156px;
+  padding-bottom: 20px;
+  vertical-align: center;
+  color: inherit;
+  text-decoration: none;
+  background: no-repeat right top;
+  background-image: url(../images/button.png);
+  vertical-align: middle;
+}
+
+a:focus {
+  background-image: url(../images/button_focus.png);
+  outline: none;
+}
+
+a span {
+  display: block;
+  width: 133%;
+  -webkit-transform: scale(0.75, 1);
+  -webkit-transform-origin: 0 50%;
+}
+
+div#footer {
+  margin-top: -8px;
+  width: 720px;
+  height: 48px;
+  background: no-repeat left top;
+  background-image: url(../images/footer.png);
+}
+
+div#counter {
+  display: block;
+  font-family: 'PT Sans Caption';
+  font-size: 16px;
+  font-weight: bold;
+  color: white; 
+  float: right;
+  padding-right: 95px;
+}
+
+/* BBC First */
+
+body.bbcfirst {
+  background-image: url(../images/body_bbcfirst.png);
+  background-repeat: repeat;
+}
+
+.bbcfirst ul {
+  /* float:left; */ 
+  width:100%; 
+  margin:0 0 1em 0;
+  padding-left: 50px;
+  padding-right: 50px;
+  display:table;
+}
+
+.bbcfirst li {
+  /* float:left; */ 
+  width:49%;
+  list-style-type: none;
+  display: table-row;
+}
+
+.bbcfirst div#header {
+  /* background-image: url(../images/header_bbcfirst.png); */
+  background:transparent;
+  background-size: cover;
+  border-bottom: 2px solid #fff;
+}
+
+.bbcfirst div#header h1 {
+  margin-top: 0px;
+  height: 120px;
+  width: 720px;
+  background-image: url(../images/logo_BBCfirst.png);
+  background-size: 145px 104px;
+  background-repeat: no-repeat;
+  background-position: center; 
+  /* Hide the text. */
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.bbcfirst a {
+  font-family: 'PT Sans Narrow';
+  font-size: 25px;
+  display: table-cell;
+  width: 250px;
+  height: 50px;
+  padding-left: 20px; 
+  padding-bottom: 20px;
+  padding-top:20px;
+  vertical-align: center;
+  text-decoration: none;
+  background: no-repeat right top;
+  border-bottom: 3px solid #FFF;
+  vertical-align: middle;
+  opacity: 0.9;
+}
+
+.bbcfirst a:focus {
+  border-bottom: 3px solid #d2a622;
+}
+
+.bbcfirst a span {
+  position:relative;
+  left:75px;
+  width:600px;
+  /* width: 100%; */
+  /* display: block; */
+  color: #FFF; 
+  /* -webkit-transform: scale(0.75, 1); */
+  /* -webkit-transform-origin: 0 50%; */
+}
+
+.bbcfirst div#footer {
+  background:transparent;
+}
+
+.bbcfirst div#counter {
+  display: block;
+  font-family: 'PT Sans Narrow';
+  font-size: 20px;
+  font-weight: bold;
+  color: white; 
+  float: right;
+  padding-right: 95px;
+}
+
+/* BBC First */
+
+/* CSS 13th Street */
+
+.thirteenthstreet .prose {
+  overflow: hidden;
+  white-space: nowrap;
+  -o-text-overflow: ellipsis;
+  -ms-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+}
+
+.thirteenthstreet a {
+  font-family: 'PT Sans Caption';
+  font-size: 20px;
+  font-weight: bold;
+  display: table-cell;
+  padding-left: 70px; 
+  color: #AACC45; 
+  text-decoration: none;
+  background-image: url(../images/button_13thst.png); 
+  text-transform: uppercase;
+}
+
+.thirteenthstreet a:focus {
+  background-image: url(../images/button_13thst_focus.png); 
+  background-position: 96px;
+  color: #345A7F; 
+  outline: none;  
+  background-size: 627px 96px;
+  background-repeat: no-repeat;
+  text-transform: uppercase;
+}
+
+.thirteenthstreet span {
+  position:relative;
+  left:75px;
+  width:600px;
+}
+
+.thirteenthstreet div#header {
+  background-image: url(../images/header_13th_street.png); 
+  background-size: cover; 
+}
+
+.thirteenthstreet div#header h1 {
+  margin-top: 10px;
+  height: 120px;
+  width: 720px;
+  background-image: url(../images/logo_13th_street.png);
+  background-size: 65px 85px;
+  background-repeat: no-repeat;
+  background-position: center; 
+  /* Hide the text. */
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.thirteenthstreet div#content {
+  margin-top: 0px;
+  padding-top: 23px;
+  background-image: url(../images/body_13th_street.png);
+  background-repeat: repeat;
+}
+
+.thirteenthstreet div#footer {
+  height: inherit;
+  background: #1E2B39;
+  background-image: url(../images/footer_13th_street.png);
+  background-repeat: no-repeat; 
+}
+
+.thirteenthstreet div#counter {
+  display: block;
+  font-family: 'PT Sans Caption';
+  font-size: 16px;
+  font-weight: bold;
+  color: #AACC45; 
+  float: right;
+  padding-right: 95px;
+}
+
+/* CSS 13th Street */
+
+/* CSS SyFy */
+
+.syfy .prose {
+  overflow: hidden;
+  white-space: nowrap;
+  -o-text-overflow: ellipsis;
+  -ms-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+}
+
+.syfy a {
+  font-family: 'Roboto';
+  font-size: 20px;
+  font-weight: bold;
+  display: table-cell;
+  padding-left: 70px;
+  color: white; 
+  text-decoration: none;
+  background-image: url(../images/button_syfy.png);
+}
+
+.syfy a:focus {
+  background-image: url(../images/button_syfy_focus.png);
+  background-position: 96px;
+  color: white; 
+  outline: none;
+  background-size: 627px 96px;
+  background-repeat: no-repeat;
+}
+
+.syfy a span {
+  position:relative;
+  left:75px;
+  width:600px;
+}
+
+.syfy div#header {
+  background-image: url(../images/header_syfy.png); 
+  background-size: cover; 
+}
+
+.syfy div#header h1 {
+  margin-top: 15px;
+  height: 120px;
+  width: 720px;
+  background-image: url(../images/logo_syfy_street.png);
+  background-size: 115px 83px;
+  background-repeat: no-repeat;
+  background-position: center; 
+  /* Hide the text. */
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.syfy div#content {
+  margin-top: 0px;
+  padding-top: 23px;
+  background-image: url(../images/body_syfy_street.png);
+  background-repeat: repeat;
+}
+
+.syfy div#footer {
+  height: inherit;
+  color: #0088ce !important;
+  background-image: url(../images/footer_syfy.png);
+  background-repeat: no-repeat; 
+}
+
+.syfy div#counter {
+  display: block;
+  font-family: 'Roboto';
+  font-size: 16px;
+  font-weight: bold;
+  color: #42145f; 
+  float: right;
+  padding-right: 95px;
+}
+
+/* CSS SyFy */
+
+.kerktv div#header {
+  background-image: url(../images/header_kerktv.png);
+  background-size: cover;
+}
+
+.kerktv div#header h1 {
+  display: none;
+}
+
+.kerktv div#footer {
+  background-image: url(../images/footer_kerktv.png);
+}
+
+.bstv div#header {
+  background-image: url(../images/header_bstv.png);
+}
+
+.bstv div#header h1 {
+  display: none;
+}
+
+.bstv div#footer {
+  background-image: url(../images/footer_bstv.png);
+}
+
+.amfi66 div#header {
+  background-image: url(../images/header_amfi66.png);
+}
+
+.amfi66 div#header h1 {
+  display: none;
+}
+
+.amfi66 div#footer {
+  background-image: url(../images/footer_amfi66.png);
+}
+
+.hartvoordeventer div#header {
+  background-image: url(../images/header_hartvoordeventer.png);
+}
+
+.hartvoordeventer div#header h1 {
+  display: none;
+}
+
+.hartvoordeventer div#footer {
+  background-image: url(../images/footer_hartvoordeventer.png);
+}
+
+.tvoost div#header {
+  background-image: url(../images/header_tvoost.png);
+}
+
+.tvoost div#header h1 {
+  display: none;
+}
+
+.tvoost div#footer {
+  background-image: url(../images/footer_tvoost.png);
+}
+
+.ecvvod div#header {
+  background-image: url(../images/header_ecvvod.png);
+}
+
+.ecvvod div#header h1 {
+  display: none;
+}
+
+.ecvvod div#footer {
+  background-image: url(../images/footer_ecvvod.png);
+}
+
+.deventertv div#header {
+  background-image: url(../images/header_deventertv.png);
+}
+
+.deventertv div#header h1 {
+  display: none;
+}
+
+.deventertv div#footer {
+  background-image: url(../images/footer_deventertv.png);
+}
+
+.powerunlimited div#header {
+  background-image: url(../images/header_powerunlimited.png);
+}
+
+.powerunlimited div#header h1 {
+  display: none;
+}
+
+.powerunlimited div#footer {
+  background-image: url(../images/footer_powerunlimited.png);
+}
+
+.wijchen div#header {
+  background-image: url(../images/header_wijchen.png);
+}
+
+.wijchen div#header h1 {
+  display: none;
+}
+
+.wijchen div#footer {
+  background-image: url(../images/footer_wijchen.png);
+}
+
+.amfvod div#header {
+  background-image: url(../images/header_amfvod.png);
+}
+
+.amfvod div#header h1 {
+  display: none;
+}
+
+.amfvod div#footer {
+  background-image: url(../images/footer_amfvod.png);
+}
+
+.almbtv div#header {
+  background-image: url(../images/header_almbtv.png);
+}
+
+.almbtv div#header h1 {
+  display: none;
+}
+
+.almbtv div#footer {
+  background-image: url(../images/footer_almbtv.png);
+}
+
+.flevotv div#header {
+  background-image: url(../images/header_flevotv.png);
+}
+
+.flevotv div#header h1 {
+  display: none;
+}
+
+.flevotv div#footer {
+  background-image: url(../images/footer_flevotv.png);
+}
+
+.zwotv div#header {
+  background-image: url(../images/header_zwotv.png);
+}
+
+.zwotv div#header h1 {
+  display: none;
+}
+
+.zwotv div#footer {
+  background-image: url(../images/footer_zwotv.png);
+}
+
+.glasethooglanderveen div#header {
+  background-image: url(../images/header_glasethooglanderveen.png);
+}
+
+.glasethooglanderveen div#header h1 {
+  display: none;
+}
+
+.glasethooglanderveen div#footer {
+  background-image: url(../images/footer_glasethooglanderveen.png);
+}
+
+.rsnvod div#header {
+  background-image: url(../images/header_rsnvod.png);
+}
+
+.rsnvod div#header h1 {
+  display: none;
+}
+
+.rsnvod div#footer {
+  background-image: url(../images/footer_rsnvod.png);
+}
+
+.hooglandvod div#header {
+  background-image: url(../images/header_hooglandvod.png);
+}
+
+.hooglandvod div#header h1 {
+  display: none;
+}
+
+.hooglandvod div#footer {
+  background-image: url(../images/footer_hooglandvod.png);
+}
+
+.htnvod div#header {
+  background-image: url(../images/header_htnvod.png);
+}
+
+.htnvod div#header h1 {
+  display: none;
+}
+
+.htnvod div#footer {
+  background-image: url(../images/footer_htnvod.png);
+}
+
+.omroepvoorst div#header {
+  background-image: url(../images/header_omroepvoorst.png);
+}
+
+.omroepvoorst div#header h1 {
+  display: none;
+}
+
+.omroepvoorst div#footer {
+  background-image: url(../images/footer_omroepvoorst.png);
+}
+
+.nnvod div#header {
+  background-image: url(../images/header_nnvod.png);
+}
+
+.nnvod div#header h1 {
+  display: none;
+}
+
+.nnvod div#footer {
+  background-image: url(../images/footer_nnvod.png);
+}
+
+.svspakenburg div#header {
+  background-image: url(../images/header_svspakenburg.png);
+}
+
+.svspakenburg div#header h1 {
+  display: none;
+}
+
+.svspakenburg div#footer {
+  background-image: url(../images/footer_svspakenburg.png);
+}
+
+.nmvod div#header {
+  background-image: url(../images/header_nmvod.png);
+}
+
+.nmvod div#header h1 {
+  display: none;
+}
+
+.nmvod div#footer {
+  background-image: url(../images/footer_nmvod.png);
+}
+
+.nnpromo div#header {
+  background-image: url(../images/header_nnpromo.png);
+}
+
+.nnpromo div#header h1 {
+  display: none;
+}
+
+.nnpromo div#footer {
+  background-image: url(../images/footer_nnpromo.png);
+}
+
+.eva div#header {
+  background-image: url(../images/header_eva.png);
+}
+
+.eva div#header h1 {
+  display: none;
+}
+
+.eva div#footer {
+  background-image: url(../images/footer_eva.png);
+}
+
+.rtvmeppel div#header {
+  background-image: url(../images/header_rtvmeppel.png);
+}
+
+.rtvmeppel div#header h1 {
+  display: none;
+}
+
+.rtvmeppel div#footer {
+  background-image: url(../images/footer_rtvmeppel.png);
+}
+
+.wtvod div#header {
+  background-image: url(../images/header_wtvod.png);
+}
+
+.wtvod div#header h1 {
+  display: none;
+}
+
+.wtvod div#footer {
+  background-image: url(../images/footer_wtvod.png);
+}
+
+.keiknoueens div#header {
+  background-image: url(../images/header_keiknoueens.png);
+}
+
+.keiknoueens div#header h1 {
+  display: none;
+}
+
+.keiknoueens div#footer {
+  background-image: url(../images/footer_keiknoueens.png);
+}
+
+.hfdvod div#header {
+  background-image: url(../images/header_hfdvod.png);
+}
+
+.hfdvod div#header h1 {
+  display: none;
+}
+
+.hfdvod div#footer {
+  background-image: url(../images/footer_hfdvod.png);
+}
+
+.vathorst div#header {
+  background-image: url(../images/header_vathorst.png);
+}
+
+.vathorst div#header h1 {
+  display: none;
+}
+
+.vathorst div#footer {
+  background-image: url(../images/footer_vathorst.png);
+}
+
+.studio040 div#header {
+  background-image: url(../images/header_studio040.png);
+}
+
+.studio040 div#header h1 {
+  display: none;
+}
+
+.studio040 div#footer {
+  background-image: url(../images/footer_studio040.png);
+}
+
+.ptvod div#header {
+  background-image: url(../images/header_ptvod.png);
+}
+
+.ptvod div#header h1 {
+  display: none;
+}
+
+.ptvod div#footer {
+  background-image: url(../images/footer_ptvod.png);
+}
+
+.entervod div#header {
+  background-image: url(../images/header_entervod.png);
+}
+
+.entervod div#header h1 {
+  display: none;
+}
+
+.entervod div#footer {
+  background-image: url(../images/footer_entervod.png);
+}
+
+.ijsselmeervogels div#header {
+  background-image: url(../images/header_ijsselmeervogels.png);
+}
+
+.ijsselmeervogels div#header h1 {
+  display: none;
+}
+
+.ijsselmeervogels div#footer {
+  background-image: url(../images/footer_ijsselmeervogels.png);
+}
+
+.tvoosthd div#header {
+  background-image: url(../images/header_tvoosthd.png);
+}
+
+.tvoosthd div#header h1 {
+  display: none;
+}
+
+.tvoosthd div#footer {
+  background-image: url(../images/footer_tvoosthd.png);
+}
+
+.utvod div#header {
+  background-image: url(../images/header_utvod.png);
+}
+
+.utvod div#header h1 {
+  display: none;
+}
+
+.utvod div#footer {
+  background-image: url(../images/footer_utvod.png);
+}
+
+.ermelovod div#header {
+  background-image: url(../images/header_ermelovod.png);
+}
+
+.ermelovod div#header h1 {
+  display: none;
+}
+
+.ermelovod div#footer {
+  background-image: url(../images/footer_ermelovod.png);
+}
+
+.vtvod div#header {
+  background-image: url(../images/header_vtvod.png);
+}
+
+.vtvod div#header h1 {
+  display: none;
+}
+
+.vtvod div#footer {
+  background-image: url(../images/footer_vtvod.png);
+}
+
+.erh div#header {
+  background-image: url(../images/header_erh.png);
+}
+
+.erh div#header h1 {
+  display: none;
+}
+
+.erh div#footer {
+  background-image: url(../images/footer_erh.png);
+}
+
+.rtvhattem div#header {
+  background-image: url(../images/header_rtvhattem.png);
+}
+
+.rtvhattem div#header h1 {
+  display: none;
+}
+
+.rtvhattem div#footer {
+  background-image: url(../images/footer_rtvhattem.png);
+}
+
+.vovod div#header {
+  background-image: url(../images/header_vovod.png);
+}
+
+.vovod div#header h1 {
+  display: none;
+}
+
+.vovod div#footer {
+  background-image: url(../images/footer_vovod.png);
+}
+
+.excelsior div#header {
+  background-image: url(../images/header_excelsior.png);
+}
+
+.excelsior div#header h1 {
+  display: none;
+}
+
+.excelsior div#footer {
+  background-image: url(../images/footer_excelsior.png);
+}
+
+.tvbergh div#header {
+  background-image: url(../images/header_tvbergh.png);
+}
+
+.tvbergh div#header h1 {
+  display: none;
+}
+
+.tvbergh div#footer {
+  background-image: url(../images/footer_tvbergh.png);
+}
+
+.wijzijntv div#header {
+  background-image: url(../images/header_wijzijntv.png);
+}
+
+.wijzijntv div#header h1 {
+  display: none;
+}
+
+.wijzijntv div#footer {
+  background-image: url(../images/footer_wijzijntv.png);
+}
+
+.jbfilm div#header {
+  background-image: url(../images/header_jbfilm.png);
+}
+
+.jbfilm div#header h1 {
+  display: none;
+}
+
+.jbfilm div#footer {
+  background-image: url(../images/footer_jbfilm.png);
+}
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,34 @@
+{
+  "feeds":[
+    {
+      "name":"13thstreet",
+      "dir":"/home/aoldenburger/django/github/xmlfeed/13thstreet",
+      "style":"studio040",
+      "title":"13th Street",
+      "source":"xml",
+      "category":"no",
+      "django":"yes",
+      "load":"yes"
+    },   
+    {
+      "name":"studio040",
+      "dir":"/home/aoldenburger/django/github/xmlfeed/040",
+      "style":"studio040",
+      "title":"Studio 040",
+      "source":"xml",
+      "category":"yes",
+      "django":"yes",
+      "load":"yes"
+    },   
+    {
+      "name":"flevotv",
+      "dir":"/home/aoldenburger/django/github/xmlfeed/flevotv",
+      "style":"flevotv",
+      "title":"Flevo TV",
+      "source":"xml",
+      "category":"yes",
+      "load":"yes",
+      "django":"no"
+    }   
+  ]
+}

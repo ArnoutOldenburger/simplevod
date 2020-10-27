@@ -1,0 +1,181 @@
+{% load admin_static %}<!DOCTYPE html>
+<html lang="{{ LANGUAGE_CODE|default:"en-us" }}" {% if LANGUAGE_BIDI %}dir="rtl"{% endif %}>
+<head>
+<title>{% block title %}{% endblock %}</title>
+<link rel="stylesheet" type="text/css" href="{% block stylesheet %}{% static "admin/css/base.css" %}{% endblock %}" />
+{% block extrastyle %}{% endblock %}
+<!--[if lte IE 7]><link rel="stylesheet" type="text/css" href="{% block stylesheet_ie %}{% static "admin/css/ie.css" %}{% endblock %}" /><![endif]-->
+{% if LANGUAGE_BIDI %}<link rel="stylesheet" type="text/css" href="{% block stylesheet_rtl %}{% static "admin/css/rtl.css" %}{% endblock %}" />{% endif %}
+<script type="text/javascript">window.__admin_media_prefix__ = "{% filter escapejs %}{% static "admin/" %}{% endfilter %}";</script>
+{% block extrahead %}{% endblock %}
+{% block blockbots %}<meta name="robots" content="NONE,NOARCHIVE" />{% endblock %}
+
+<script type="text/javascript" src="{% static "scripts/jquery-1.11.2.min.js" %}"></script> 
+<script>
+    $(document).ready(function(){
+        var defaultSelected = false;
+        var nowSelected     = true;
+
+        if ($("body").hasClass("simplevod-tvod")) {
+            //alert('body class - simplevod-tvod');
+            var loc_array = document.location.href.split('/');
+            var tvod_id = loc_array[loc_array.length-2];
+            var tvod_id_int = parseInt(tvod_id); 
+            //alert(tvod_id_int);
+
+            if ($("#id_fk_feed").length > 0){
+                $('#id_fk_feed').empty();
+                $('#id_fk_feed').css('width', '300px');                
+            }
+
+            if ($("#id_fk_category").length > 0){
+                $('#id_fk_category').empty();                
+                $('#id_fk_category').css('width', '300px');                
+            }
+
+            $.get('/ajax_tvod_combobox/', { ajax_tvod_id: tvod_id_int }, function(data){
+                var feed_id = 0;
+                var feed_title = "";
+
+                var category_selected = 0;
+                var category_id = 0;
+                var category_title = "";
+                
+                if ( data[0] !== undefined ) {
+                    feed_id = data[0];
+                    //alert(feed_id);
+                }
+                if ( data[1] !== undefined ) {
+                    feed_title = data[1]
+                    //alert(feed_title);
+                }
+                $('#id_fk_feed').append( new Option(feed_title,feed_id,defaultSelected,nowSelected) );
+           
+                if ( data[2] !== undefined ) {
+                    category_selected = data[2]
+                    //alert(category_selected);
+                }
+                if ( data[3] !== undefined ) {
+                    category_list = data[3]
+                    //alert(category_list);
+                }
+
+                for (var key in category_list) {
+                    if (category_list.hasOwnProperty(key)) {
+                        //alert(key + " -> " + category_list[key]);
+                        category_id = category_list[key][0];
+                        //alert(category_id);
+                        category_title = category_list[key][1];
+                        $('#id_fk_category').append( new Option(category_title,category_id) );
+                    }
+                }
+                
+                var category_selected_int = parseInt(category_selected); 
+                //alert(category_selected_int);
+                $("#id_fk_category").val(category_selected_int);
+            });
+
+        } else if ($("body").hasClass("simplevod-category")) {
+            var loc_array = document.location.href.split('/');
+            var category_id = loc_array[loc_array.length-2];
+            var category_id_int = 0; 
+
+            if(category_id != "add") {
+                category_id_int = parseInt(category_id); 
+            }
+
+            $('.field-idat').hide();            
+
+            if ($("#id_fk_feed").length > 0){
+                $('#id_fk_feed').empty();
+                $('#id_fk_feed').css('width', '300px');                
+            }
+            
+            $.get('/ajax_category_combobox/', { ajax_category_id: category_id_int }, function(data){
+                var feed_id = 0;
+                var feed_title = "";
+
+                if ( data[0] !== undefined ) {
+                    feed_list = data[0]
+                    //alert(feed_list);
+                }
+
+                for (var key in feed_list) {
+                    if (feed_list.hasOwnProperty(key)) {
+                        //alert(key + " -> " + feed_list[key]);
+                        feed_id = feed_list[key][0];
+                        //alert(category_id);
+                        feed_title = feed_list[key][1];
+                        $('#id_fk_feed').append( new Option(feed_title,feed_id) );
+                    }
+                }
+            });
+        }
+    });
+</script>    
+
+</head>
+{% load i18n %}
+
+<body class="{% if is_popup %}popup {% endif %}{% block bodyclass %}{% endblock %}">
+
+<!-- Container -->
+<div id="container">
+
+    {% if not is_popup %}
+    <!-- Header -->
+    <div id="header">
+        <div id="branding">
+        {% block branding %}{% endblock %}
+        </div>
+        {% if user.is_active and user.is_staff %}
+        <div id="user-tools">
+            {% trans 'Welkom,' %}
+            <strong>{% filter force_escape %}{% firstof user.get_short_name user.get_username %}{% endfilter %}</strong>.
+            {% block userlinks %}
+                <a href="/static/admindocs/manual.pdf" target="_blank">{% trans 'Gebruikershandleiding' %}</a> /
+                {% if user.has_usable_password %}
+                <a href="{% url 'admin:password_change' %}">{% trans 'Change password' %}</a> /
+                {% endif %}
+                <a href="{% url 'admin:logout' %}">{% trans 'Uitloggen' %}</a>
+            {% endblock %}
+        </div>
+        {% endif %}
+        {% block nav-global %}{% endblock %}
+    </div>
+    <!-- END Header -->
+    {% block breadcrumbs %}
+    <div class="breadcrumbs">
+    <a href="{% url 'admin:index' %}">{% trans 'Home' %}</a>
+    {% if title %} &rsaquo; {{ title }}{% endif %}
+    </div>
+    {% endblock %}
+    {% endif %}
+
+    {% block messages %}
+        {% if messages %}
+        <ul class="messagelist">{% for message in messages %}
+          <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+        {% endfor %}</ul>
+        {% endif %}
+    {% endblock messages %}
+
+    <!-- Content -->
+    <div id="content" class="{% block coltype %}colM{% endblock %}">
+        {% block pretitle %}{% endblock %}
+        {% block content_title %}{% if title %}<h1>{{ title }}</h1>{% endif %}{% endblock %}
+        {% block content %}
+        {% block object-tools %}{% endblock %}
+        {{ content }}
+        {% endblock %}
+        {% block sidebar %}{% endblock %}
+        <br class="clear" />
+    </div>
+    <!-- END Content -->
+
+    {% block footer %}<div id="footer"></div>{% endblock %}
+</div>
+<!-- END Container -->
+
+</body>
+</html>

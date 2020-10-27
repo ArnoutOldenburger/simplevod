@@ -1,0 +1,14 @@
+{% load static from staticfiles %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>{{ title }}</title>
+        <link rel="stylesheet" href="{% static "stylesheets/play.css" %}">
+        <script src="{% static "scripts/play.js" %}"></script>
+    </head>
+	
+    <body>
+        <p>{{ message }}...</p>
+    </body>
+</html>
+

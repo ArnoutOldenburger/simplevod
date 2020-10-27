@@ -1,0 +1,27 @@
+{% load static from staticfiles %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="{% static "stylesheets/telfortvideotheek.css" %}">
+        <script src="{% static "scripts/telfortvideotheek.js" %}"></script>
+    </head>
+	
+    <body class="{{ style }}">
+		<div id="header">
+			<h1>Title</h1>
+		</div>
+		<div id="content">
+			{% for item_element in item_listing %}
+			<div class="movie">
+				<a href="{% url 'play' style item_element.is_new feed_id item_element.fk_category_id item_element.id %}">
+                                <img src="/artwork/{{ style }}/{{item_element.id}}.jpg" width="250" height="373"/>
+                                <div class="title">{{ item_element.title }}</div>
+                                <!-- videoref: {{ item_element.videoref }} -->
+                                </a>
+			</div>
+			{% endfor %}
+		</div>
+		<div id="footer"><div id="counter"></div>
+	</body>
+</html>
+

@@ -1,0 +1,47 @@
+{% load static from staticfiles %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="{% static "scripts/webfont.js" %}"></script> 
+        <script>
+          WebFont.load({
+            google: {
+              families: ['PT Sans Narrow', 'PT Sans Caption', 'Roboto']
+            }
+          });
+        </script>
+    
+        <link rel="stylesheet" href="{% static "stylesheets/browse.css" %}">
+        <link rel="up" href={{ linkUp }}>
+        
+        <script type="text/javascript" src="{% static "scripts/jquery-1.11.2.min.js" %}"></script> 
+        <script>
+            $(document).ready(function(){
+                alert('hello world');
+            }
+        </script>    
+        
+    </head>
+	
+    <body class="{{ style }}">
+		<div id="header">
+			<h1>Title</h1>
+		</div>
+		<div id="content">
+			<ul>
+				{% spaceless %}
+				{% for item_element in item_listing %}
+				<li>
+					<a href="{% url 'play' style item_element.is_new feed_id item_element.fk_category_id item_element.id %}">
+						<span class="prose">{{ item_element.title }}</span>
+					</a>
+				</li>
+				{% endfor %}
+				{% endspaceless %}
+			</ul>
+		</div>
+		<div id="footer"><div id="counter"></div></div>
+	</body>
+</html>
+
+

@@ -1,0 +1,19 @@
+.dashboard #content {
+    width: 750px;
+}
+
+.module caption {
+    font-size: 13px;
+}
+
+th {
+    font-size: 12px;
+    font-weight: bold;
+    text-align: left;
+}
+th {
+    font-family: "Lucida Grande",Verdana,Arial,sans-serif;
+    font-size: 14px;
+    line-height: 40px;
+}
+

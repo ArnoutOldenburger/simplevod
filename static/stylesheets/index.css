@@ -1,0 +1,8 @@
+body {
+  margin: 40pt;
+  font-size: 18pt;
+}
+
+a:focus {
+  outline: 4px solid yellow;
+}

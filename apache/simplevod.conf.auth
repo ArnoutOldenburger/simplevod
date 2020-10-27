@@ -1,0 +1,25 @@
+<VirtualHost *:80>
+        ServerAdmin webmaster@localhost
+        DocumentRoot /srv/simplevod
+
+        ErrorLog  /var/log/httpd/error.log
+        CustomLog /var/log/httpd/access.log combined
+
+        Alias /static/ /srv/simplevod/static/
+        Alias /artwork /srv/artwork/
+
+        <Directory /srv/simplevod/static>
+                Order deny,allow
+                Allow from all
+        </Directory>
+
+        WSGIScriptAlias / /srv/simplevod/simplevod/wsgi.py
+
+        <Directory /srv/simplevod/simplevod>
+                <Files wsgi.py>
+                        Order deny,allow
+                        Allow from all
+                </Files>
+        </Directory>
+
+</VirtualHost>

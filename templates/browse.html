@@ -1,0 +1,43 @@
+{% load static from staticfiles %}
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Login Form</title>
+
+    <link rel="stylesheet" href="{% static "stylesheets/browse.css" %}">
+
+    <script src="{% static "scripts/webfont.js" %}"></script> 
+    <script>
+      WebFont.load({
+        google: {
+          families: ['PT Sans Narrow', 'PT Sans Caption', 'Roboto']
+        }
+      });
+    </script>
+
+    <script type="text/javascript" src="{% static "scripts/jquery-1.11.2.min.js" %}"></script> 
+    <script src="{% static "scripts/browse.js" %}"></script> 
+</head>
+	
+    <body class="{{ style }}">
+		<div id="header">
+			<h1>BRO Title</h1>
+		</div>
+		<div id="content">
+			<ul>
+				{% spaceless %}
+				{% for category_element in category_listing %}
+				<li>
+					<a href="{% url 'category' style category_element.is_new category_element.fk_feed_id category_element.id %}">
+						<span>{{ category_element.title }}</span>
+					</a>
+				</li>
+				{% endfor %}
+				{% endspaceless %}
+			</ul>
+		</div>
+		<div id="footer"><div id="counter"></div>
+	</body>
+</html>
+
